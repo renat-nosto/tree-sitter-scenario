@@ -13,7 +13,8 @@ module.exports = grammar({
   externals: ($) => [$.indent, $.dedent, $.newline],
   rules: {
     source_file: ($) => repeat($.expr),
-    expr: ($) => choice($.statement, $.flow_control),
+    expr: ($) => choice($.statement, $.flow_control, $.comment),
+    comment: ($) => token(seq("#", /.*/)),
     statement: ($) => seq($.command, $.newline),
     command: ($) => choice($.conf, $.complex),
     conf: ($) => seq("conf", $.var, "=", $.str),

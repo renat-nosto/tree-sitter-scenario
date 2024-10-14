@@ -103,6 +103,10 @@
       "required": true,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "flow_control",
           "named": true
         },
@@ -204,6 +208,10 @@
   {
     "type": "=",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "conf",
